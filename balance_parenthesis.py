@@ -19,21 +19,21 @@ Examples:
 
 """
 # from node_stack import node
-from node_stack import *
+from node_stack import node
 
 def balance_parenthesis(a_string):
     th_stack = node()
     for i in range(len(a_string)):
         if a_string(i) == '(':
-            th_stack.push(a_string(i), i)
+            th_stack.push(a_string(i))
         elif a_string(i) ==  ")":
-        try:    
+         try:    
             th_stack.pop()
-        except IndexError:
+         except IndexError:
             return -1
             
 
-    if th_stack < is_empty():
+    if th_stack.is_empty():
         return 0 
     else: 
         return th_stack
