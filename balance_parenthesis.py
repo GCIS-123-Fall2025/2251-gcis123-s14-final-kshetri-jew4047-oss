@@ -18,13 +18,29 @@ Examples:
 "-----() -- ( () )" returns 0
 
 """
-from node_stack import Stack
+# from node_stack import node
+from node_stack import *
 
 def balance_parenthesis(a_string):
-    pass # please replace with your solution
+    th_stack = node()
+    for i in range(len(a_string)):
+        if a_string(i) == '(':
+            th_stack.push(a_string(i), i)
+        elif a_string(i) ==  ")":
+        try:    
+            th_stack.pop()
+        except IndexError:
+            return -1
+            
 
+    if th_stack < is_empty():
+        return 0 
+    else: 
+        return th_stack
+    
 
-def main():     pass
- 
+def main():     
+    a_string = input("enter parenthesis: ")
+    print(balance_parenthesis(a_string))
 
 if __name__ == "__main__":    main()
